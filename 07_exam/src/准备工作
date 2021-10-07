@@ -1,0 +1,47 @@
+任务：在线考试管理系统-----用户信息管理模块
+
+子任务：
+        用户信息注册
+        用户信息查询
+        用户信息删除
+        用户信息更新
+
+准备工作：
+        1、创建用户信息表Users.frm
+        create table Users(
+
+                     userID int primary key auto_increment,
+                     userName varchar(50),
+                     password varchar(50),
+                     sex char(1),
+                     email varchar(50)
+
+                 )
+        2、在src下，com.dapeng.entity.Users实体类的准备
+
+        3、在src下，引入com.dapeng.util.DButil，jdbc工具类
+
+        4、在WEB-INF文件夹下，创建lib文件夹，存放mysql提供的JDBC实现jar包
+
+任务：试题信息管理模块
+
+子任务：1、添加试题
+        2、查询试题
+        3、删除试题
+        4、更新试题
+
+准备工作：1、准备试题信息表,单选题，四个选项，一个正确答案
+            create table question(
+                questionId int primary key auto_increment,
+                title varchar(50),
+                optionA varchar(20),
+                optionB varchar(20),
+                optionC varchar(20),
+                optionD varchar(20),
+                answer char(2)
+            )
+任务：随机出题
+
+开发任务：在线阅卷，
+    1.根据用户提供答案，与正确答案比较，得到分数
+    2.将用户分数交给score.jsp做输出
